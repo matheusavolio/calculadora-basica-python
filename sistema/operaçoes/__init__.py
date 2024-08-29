@@ -40,12 +40,6 @@ def opeArit(a=0):
                 return dividir()
             elif a == 5:
                 raiz()
-            elif a == 6:
-                ok = False
-                print(f"{red}Finalizando o programa...{reset}")
-                sleep(1)
-                print(f"{green}Programa finalizado! Volte sempre.{reset}")
-                break 
         except:
             if a > 6:
                 print(f"{red}ERRO! Digite apenas números listados no menu de opções.{reset}")
