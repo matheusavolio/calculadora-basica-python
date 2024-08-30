@@ -32,6 +32,20 @@ def lerArquivo(nome):
         print(f"{cian}{dado[0]:<30}{dado[1]:>3} anos{reset}")    
     
 
-def abrirArquivo(arq):
-    a = open(arq, "rt")
+
+def menuArq(lista):
+    menu(f"{green}MENU DOS CALCULOS{reset}")
+    for item in lista:
+        print(f"{blue}{item}{reset}")
+    opc = int(input(f"{green}Qual sua opção: {reset}"))
     
+
+
+def salvarArq(arq, calculo):
+    try:
+        with open(arq, "at") as a:
+            a.write(f"{calculo}\n")
+    except Exception as e:
+        print(f"Houve um erro na hora de escrever os dados: {e}")
+    else:
+        print("Novo cálculo salvo!")

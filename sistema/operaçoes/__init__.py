@@ -15,37 +15,12 @@ def menu(txt):
     print(f"{green}{txt.center(42)}{reset}")
     print(linha())
 
-def opeArit(a=0):
-    """
-    Função para receber a operação aritmética escolhida pelo usuário
-    param a -> recebe um número int do usuário 
-    try -> se nenhum erro acontecer até o momento, irá exibir um menu de opções
-    except 1 -> se o usuário interromper por conta propria, encerra o programa
-    except 2 -> exibe uma mensagem de erro caso ele insira um valor errado
-    else -> finaliza o loop e retorna o resultado de a
-    ok True -> usado para manter o loop ativo se o usuário não inserir algum dado de forma correta
-    if a > 6 -> se o número do usuário for maior do que 6, irá exibir uma mensagem de erro
-    caso o usuário insira um número 
-    """
-    ok = True
-    while ok == True:
-        try:
-            if a == 1:
-                return somar()
-            elif a == 2:
-                return subtrair()
-            elif a == 3:
-                return multiplicar()
-            elif a == 4:
-                return dividir()
-            elif a == 5:
-                raiz()
-        except:
-            if a > 6:
-                print(f"{red}ERRO! Digite apenas números listados no menu de opções.{reset}")
-        else:
-            ok = False
-            return a
+def opeArit(lista):
+        menu(f"{green}MENU PRINCIPAL{reset}")
+        for item in lista:
+            print(f"{blue}{item}{reset}")
+        opc = int(input(f"{green}Sua opção: {reset}"))
+        return opc
 
 def lista(msg):
     lista.append(msg)
@@ -70,7 +45,7 @@ def somar(n1=0, n2=0):
         try:
             n1 = int(input("Digite um valor: "))
             n2 = int(input("Digite outro valor: "))
-            r = [f"{n1} + {n2} = {n1 + n2}"]
+            r = f"{n1} + {n2} = {n1 + n2}"
         except (ValueError, TypeError, KeyboardInterrupt):
             print(f"{red}ERRO! Digite um número inteiro!{reset}")
         else:
