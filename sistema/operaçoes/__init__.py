@@ -45,14 +45,11 @@ def somar(n1=0, n2=0):
         try:
             n1 = int(input("Digite um valor: "))
             n2 = int(input("Digite outro valor: "))
-            r = f"{n1} + {n2} = {n1 + n2}"
+            r = n1 + n2
         except (ValueError, TypeError, KeyboardInterrupt):
             print(f"{red}ERRO! Digite um número inteiro!{reset}")
         else:
-            ok = False
-            for c in r:
-                return print(c)
-            lista(c)
+            return print(f"{n1} + {n2} = {r}")
 
 def subtrair(n1=0, n2=0):
     """
